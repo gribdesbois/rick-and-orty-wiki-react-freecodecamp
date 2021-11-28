@@ -9,10 +9,12 @@ import Filter from './components/Filter/Filter'
 import Navbar from './components/Navbar/Navbar'
 
 function App() {
-  let api = `https://rickandmortyapi.com/api/character/?page=1`
-
   let [fetchedData, setFetchedData] = useState([])
+  const [pageNumber, setPageNumber] = useState(1)
+  const [search, setSearch] = useState('')
   
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
+
 
   useEffect(() => { 
     (async function () {
@@ -28,6 +30,7 @@ function App() {
   return (
     <div className='App'>
       <h1 className='text-center mb-3'>Characters</h1>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber}></Search>
       <div className='container'>
         <div className='row'>
           Filter component will be placed here
