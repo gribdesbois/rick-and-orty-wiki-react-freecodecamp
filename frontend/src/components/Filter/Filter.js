@@ -28,6 +28,10 @@ function Filter({
           setPageNumber={setPageNumber}
           setStatus={setStatus}
         />
+        <Species
+          setPageNumber={setPageNumber}
+          setSpecies={setSpecies}
+        />
       </div>
     </div>
   )
