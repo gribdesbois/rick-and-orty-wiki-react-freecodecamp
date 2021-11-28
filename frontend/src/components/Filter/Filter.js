@@ -24,6 +24,10 @@ function Filter({
       > Clear Filters</div>
       <div className='accordion' id='accordionExample'>
         {/* category components here */}
+        <Status
+          setPageNumber={setPageNumber}
+          setStatus={setStatus}
+        />
       </div>
     </div>
   )

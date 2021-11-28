@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import './App.css'
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Search from './components/Search/Search'
 import Card from './components/Card/Card'
 import Pagination from './components/Pagination/Pagination'
@@ -9,34 +9,32 @@ import Filter from './components/Filter/Filter'
 import Navbar from './components/Navbar/Navbar'
 
 function App() {
-  let [fetchedData, setFetchedData] = useState([])
+  const [fetchedData, setFetchedData] = useState([])
   const [pageNumber, setPageNumber] = useState(1)
   const [search, setSearch] = useState('')
   const [status, setStatus] = useState('')
   const [gender, setGender] = useState('')
   const [species, setSpecies] = useState('')
-  
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`
 
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`
 
-  useEffect(() => { 
+  useEffect(() => {
     (async function () {
-      let data = await fetch(api).then((res) => res.json())
+      const data = await fetch(api).then((res) => res.json())
       setFetchedData(data)
       console.log(data)
-    })()
+    }())
   }, [api])
 
-  let {info, results} = fetchedData
+  const { info, results } = fetchedData
 
-  
   return (
     <div className='App'>
       <h1 className='text-center mb-3'>Characters</h1>
       <Search setSearch={setSearch} setPageNumber={setPageNumber}></Search>
       <div className='container'>
         <div className='row'>
-          <Filter 
+          <Filter
             pageNumber={pageNumber}
             status={status}
             setStatus={setStatus}
@@ -50,7 +48,7 @@ function App() {
             </div>
           </div>
         </div>
-        <Pagination 
+        <Pagination
           info={info}
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}
