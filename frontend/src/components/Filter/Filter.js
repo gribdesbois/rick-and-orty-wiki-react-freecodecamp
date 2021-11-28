@@ -32,6 +32,10 @@ function Filter({
           setPageNumber={setPageNumber}
           setSpecies={setSpecies}
         />
+        <Gender
+          setPageNumber={setPageNumber}
+          setGender={setGender}
+        />
       </div>
     </div>
   )
