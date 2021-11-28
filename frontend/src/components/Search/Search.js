@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Search.module.scss'
 
 function Search({ setSearch, setPageNumber }) {
