@@ -33,6 +33,17 @@ function Episodes() {
           Air date: {airDate === '' ? 'Unknown' : airDate}
         </h5>
       </div>
+      <div className='row'>
+        <div className='col-lg-3 col-12 mb-4'>
+          <h4 className='text-center mb-4'>Pick Episode</h4>
+          <InputGroup name='Episode' changeID={setId} total={51} />
+        </div>
+        <div className='col-lg-8 col-12'>
+          <div className='row'>
+            <Card results={results} />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
