@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import Episodes from './pages/Episodes'
 import Location from './pages/Location'
 import Home from './pages/Home'
+import CardDetails from './components/Card/CardDetails'
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/:id'element={<CardDetails />}/>
           <Route path='/episodes' element={<Episodes />} />
           <Route path='/location' element={<Location />} />
+          <Route path='/location:id'element={<CardDetails />} />
         </Routes>
       </div>
     </Router>
