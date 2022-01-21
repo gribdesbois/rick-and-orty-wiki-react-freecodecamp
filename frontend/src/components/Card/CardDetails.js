@@ -7,14 +7,11 @@ function CardDetails() {
 
   const api = `https://rickandmortyapi.com/api/character/${id}`
 
-  useEffect(async () => {
-    try {
-      const res = await fetch(api)
-      const { data } = res
-      setFetchedData(data)
-    } catch (err) {
-      console.log(err)
-    }
+  useEffect(() => {
+    fetch(api)
+      .then((res) => res.json())
+      .then((data) => setFetchedData(data))
+      .catch((err) => ({ error: new Error(err) }))
   }, [api])
 
   if (fetchedData) {
@@ -52,7 +49,7 @@ function CardDetails() {
           </div>
           <div className=''>
             <span className='fw-bold'>Species :</span>
-            {species?.name}
+            {species}
           </div>
         </div>
       </div>

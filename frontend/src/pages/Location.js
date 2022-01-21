@@ -41,7 +41,7 @@ function Location() {
         </div>
         <div className='col-lg-8 col-12'>
           <div className='row'>
-            <Card page='/location/' results={results} />
+            <Card page='/' results={results} />
           </div>
         </div>
       </div>

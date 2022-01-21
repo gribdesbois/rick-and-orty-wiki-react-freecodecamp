@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+
 import '../../App.css'
 
 function Navbar() {
@@ -9,7 +10,7 @@ function Navbar() {
         <Link to='/' className='navbar-brand fs-3 ubuntu'>
           Rick & Morty <span className='text-primary'>Wiki</span>
         </Link>
-        <style jsx>{`
+        <style jsx='true'>{`
           button[aria-expanded='false'] > .close {
             display: none;
           }
@@ -40,7 +41,7 @@ function Navbar() {
             <NavLink to='/episodes' className='nav-link'>
               Episode
             </NavLink>
-            <NavLink to='/location' className='nav-link' activeClassName='active'>
+            <NavLink to='/location' className={`nav-link ${({ isActive }) => (isActive ? 'active' : '')}`} /* activeclassname='active' */>
               Location
             </NavLink>
           </div>

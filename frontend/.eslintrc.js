@@ -3,12 +3,9 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'airbnb-base',
-    'react-app',
-  ],
+
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     ecmaFeatures: {
       jsx: true,
     },
@@ -19,8 +16,27 @@ module.exports = {
     semi: 'off',
     'import/prefer-default-export': 'off',
     indent: ['error', 2],
+    'import/extensions': [
+      'warn',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', 'tsx'] }],
   },
   plugins: [
     'react',
   ],
-};
+  extends: [
+    /* 'eslint:recommended', */
+    'airbnb-base',
+    /* 'plugin:react/recommended', */
+    'react-app',
+
+  ],
+
+}

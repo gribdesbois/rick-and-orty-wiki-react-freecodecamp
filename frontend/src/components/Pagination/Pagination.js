@@ -42,12 +42,12 @@ function Pagination({ pageNumber, info, setPageNumber }) {
         pageRangeDisplayed={width < 576 ? 1 : 2}
         pageCount={info?.pages}
         onPageChange={pageChange}
-        className='pagination justify-content-center my-4 gap-4'
+        className= {`pagination justify-content-center my-4 gap-4 ${({ isActive }) => (isActive ? 'active' : '')}`}
         nextLabel='Next'
         previousLabel='Prev'
         previousClassName='btn btn-primary fs-5 prev'
         nextClassName='btn btn-primary fs-5 next'
-        activeClassName='active'
+        activeclassname='active'
         pageClassName='page-item'
         pageLinkClassName='page-link'
       />

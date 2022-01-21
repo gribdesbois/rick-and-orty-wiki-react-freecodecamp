@@ -36,7 +36,7 @@ function Card({ page, results }) {
                       {status}
                     </div>
                   )
-                } if (status == 'Alive') {
+                } if (status === 'Alive') {
                   return (
                     <div className={`${styles.badge} position-absolute badge bg-success`} >
                       {status}

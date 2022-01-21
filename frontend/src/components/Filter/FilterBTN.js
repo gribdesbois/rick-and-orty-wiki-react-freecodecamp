@@ -5,7 +5,7 @@ function FilterBTN({
 }) {
   return (
     <div>
-      <style jsx>
+      <style jsx='true'>
         {`
           .x:checked + label {
             background-color: #0b5ed7;
