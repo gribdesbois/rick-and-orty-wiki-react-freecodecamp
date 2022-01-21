@@ -26,7 +26,7 @@ function FilterBTN({
           setPageNumber(1)
         }}
         className='btn btn-outline-primary'
-        for={`${name} -${index}`}
+        htmlFor={`${name} -${index}`}
         >
           {input}
         </label>
